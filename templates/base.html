@@ -37,6 +37,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/8c53bc7b65.js" crossorigin="anonymous"></script>
 
     {% endblock %}
 
@@ -48,11 +49,11 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div class="row">
-            <div class="col-12 col-lg4 my-auto py-1 py-lg-0 text-center text-lg-left">
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <!-- Logo -->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="macart-font text-black my-0">Mac<span text-organge>Art</span></h2>
+                    <h2 class="macart-font text-black my-0">Mac<span class=text-orange>Art</span></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -71,7 +72,6 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <!-- Dropdown menu -->
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
@@ -110,8 +110,8 @@
                         </a>
                     </li>
                 </ul>
-
             </div>
+        </div>
     </header>
 
     {% if messages %}

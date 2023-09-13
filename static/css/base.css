@@ -4,7 +4,6 @@ Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600 */
 
 html {
     height: 100%;
-    background-color: #ffc107;
 }
 
 body {
@@ -13,6 +12,10 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Barlow';
+}
+
+.text-orange {
+    color: #dc3545;
 }
 
 /* from Bulma */
@@ -27,6 +30,10 @@ body {
 .macart-font {
     /* text-transform: uppercase; */
     font-family: Aboreto, sans-serif;
+}
+
+.bg-black-80pc {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .main-logo-link {
