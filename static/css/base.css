@@ -1,13 +1,18 @@
+/* Aboreto (400)
+Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600 */
+
+
 html {
     height: 100%;
+    background-color: #ffc107;
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background: url('/media/hero_image_bicycles_in_dublin.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Barlow';
 }
 
 /* from Bulma */
@@ -19,8 +24,9 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
+.macart-font {
+    /* text-transform: uppercase; */
+    font-family: Aboreto, sans-serif;
 }
 
 .main-logo-link {
