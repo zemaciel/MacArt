@@ -2,16 +2,29 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 <!-- Hero section -->
-    <div class="container h-100">
+<div class="hero-section">
+    <div class="row h-100">
+        <div class="pl-0 col-md-4 my-auto">
+            <div class="bg-black-80pc">
+                <h1 class="pl-5 display-4 macart-font text-white">
+                    Fine <span class="text-orange">Art </span></br>Photos
+                </h1>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!-- <div class="container h-100">
         <div class="row h-100">
             <div class="pl-0 col-md-6 my-auto">
             <div class="bg-black-80pc">
@@ -25,6 +38,25 @@
                     </h4>
                 </div>
             </div>
+        </div> -->
+</div>
+
+<div class="about-container" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 my-3">
+                <h2>Welcome</h2>
+                <p>Welcome to <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span> Fine Art Photos, your premier destination for enhancing the ambiance of your home or office with exquisite, high-quality prints. </p><p>Explore our curated selection of photographs, as our talented photographers generously open their archives to share their unique perspectives on the world.
+                    Our diverse collection offers images in three distinct formats: <strong>square, portrait, and landscape</strong>, allowing you to choose the perfect composition for your space. Select from medium, small, or large sizes to ensure an ideal fit for your wall.
+                    To further customize your print, we offer two distinct finishes:<strong> glossy or matte</strong>. Our gallery is brimming with captivating fine art photography, waiting to adorn and elevate your surroundings.</p>
+                    <p>Browse our gallery today and discover the perfect fine art photography to enhance the spaces you cherish. 
+                    Transform your environment with our captivating prints.</p>
+           
+                <h4>
+                    <a href="" class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
+                </h4>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}

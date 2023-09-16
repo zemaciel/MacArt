@@ -112,6 +112,24 @@
                 </ul>
             </div>
         </div>
+
+        <!-- INCLUDES Nav Bar -->
+        <div class="row bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
+        <!-- Free delivery Banner -->
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-black text-white">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>                
+            </div>            
+        </div>
+    </header>
     </header>
 
     {% if messages %}
@@ -127,7 +145,11 @@
     {% block postloadjs %}
     {% endblock %}
 
-
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {% now "Y" %} Macart Fine Art Photos. All rights reserved. Site created for educational purposes only </p>
+        </div>
+    </footer>
 </body>
 
 </html>
