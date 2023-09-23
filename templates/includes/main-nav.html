@@ -11,9 +11,9 @@
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
-
+<!-- Option to display product Photos by theme -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="theme-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Themes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="theme-link">
@@ -21,7 +21,19 @@
                 <a href="{% url 'products' %}?category=cities" class="dropdown-item">City</a>
                 <a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a>
                 <a href="{% url 'products' %}?category=street" class="dropdown-item">Street Photo</a>
-                <a href="" class="dropdown-item">All Photos</a>
+                <a href="{% url 'products' %}?category=architectural,cities,landscape,street" class="dropdown-item">All Photos</a>
+            </div>
+        </li>
+<!-- Option to display product Photos by Format -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="format-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Format
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="format-link">
+                <a href="{% url 'products' %}?format=horizontal" class="dropdown-item">Horizontal</a>
+                <a href="{% url 'products' %}?format=square" class="dropdown-item">Square</a>
+                <a href="{% url 'products' %}?format=vertical" class="dropdown-item">Vertical</a>
+                <a href="{% url 'products' %}?format=horizontal,square,vertical" class="dropdown-item">All formats</a>
             </div>
         </li>
 
@@ -40,16 +52,5 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}#about">About</a>
         </li>
 
-        <!-- <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
-        </li> -->
     </ul>
 </div>
