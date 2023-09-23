@@ -8,6 +8,7 @@
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item ">By Rating</a>
                 <a href="" class="dropdown-item ">By Category</a>
+                <a href="" class="dropdown-item ">By Format</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -21,6 +22,7 @@
                 <a href="{% url 'products' %}?category=cities" class="dropdown-item">City</a>
                 <a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a>
                 <a href="{% url 'products' %}?category=street" class="dropdown-item">Street Photo</a>
+                <a href="{% url 'products' %}?format=square" class="dropdown-item">Test</a>
                 <a href="{% url 'products' %}?category=architectural,cities,landscape,street" class="dropdown-item">All Photos</a>
             </div>
         </li>
