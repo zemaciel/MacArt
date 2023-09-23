@@ -13,6 +13,14 @@ body {
     color: #555;
     font-family: 'Barlow';
 }
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
 
 .hero-section {
     background-image: url('/media/hero_image_bicycles_in_dublin.webp'); 
@@ -113,6 +121,7 @@ body {
 	position: fixed;
 	background: white;
 	z-index: -1;
+    flex-grow: 1;
 }
 
 a.category-badge > span.badge:hover {
