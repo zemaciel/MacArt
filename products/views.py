@@ -14,6 +14,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    formats = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -55,6 +56,7 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'current_formats': formats,
         'current_sorting': current_sorting,
     }
 
