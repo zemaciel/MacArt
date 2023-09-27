@@ -47,7 +47,9 @@
                 <!-- Add to shopping cart  -->
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
+                    
                     <div class="form-row">
+                        <!-- Choose Size -->
                         {% with product.has_sizes as s %}
                         {% if s %}
                         <div class="col-12">
@@ -59,14 +61,16 @@
                             </select>
                         </div>
                         {% endif %}
-                        <!-- Choose Paper -->
+                        <!-- Choose Finish -->
+                        {% with product.has_finish as f %}
+                        {% if f %}
                         <div class="col-12">
-                            <p><strong>Select Paper:</strong></p>
+                            <p><strong>Select Finish:</strong></p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
-                                    Gloss
+                                    Glossy
                                 </label>
                             </div>
                             <div class="form-check">
@@ -76,6 +80,7 @@
                                     Matte
                                 </label>
                             </div>
+                            {% endif %}
                         </div>
                         <div class="form-row">
                             <div class="col-12">
@@ -99,6 +104,7 @@
                                     value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            {% endwith %}
                             {% endwith %}
                         </div>
                 </form>
