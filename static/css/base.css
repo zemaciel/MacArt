@@ -41,6 +41,11 @@ main {
     padding: 10px 0;
 }
 
+/* BRAND */
+.macart-font {
+    font-family: Aboreto, sans-serif;
+}
+
 .text-orange {
     color: #E94E1B;
 }
@@ -55,8 +60,7 @@ main {
 }
 
 .macart-font {
-    /* text-transform: uppercase; */
-    font-family: Aboreto, sans-serif;
+        font-family: Aboreto, sans-serif;
 }
 
 .bg-black-80pc {
