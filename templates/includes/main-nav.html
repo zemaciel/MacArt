@@ -44,9 +44,9 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
                 <a href="" class="dropdown-item">Art Magazines</a>
-                <a href="" class="dropdown-item">Books</a>
-                <a href="" class="dropdown-item">Postcards &amp; Calendars</a>
-                <a href="" class="dropdown-item">All Publications</a>
+                <a href="{% url 'products' %}?category=book" class="dropdown-item">Books</a>
+                <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
+                <a href="{% url 'products' %}?category=book,calendar" class="dropdown-item">All Publications</a>
             </div>
         </li>
         <li class="nav-item">
