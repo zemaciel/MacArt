@@ -60,27 +60,21 @@
                                 <option value="l">L</option>
                             </select>
                         </div>
+            
+                        </div>
                         {% endif %}
+                        <div class="form-row">
                         <!-- Choose Finish -->
                         {% with product.has_finish as f %}
                         {% if f %}
                         <div class="col-12">
                             <p><strong>Select Finish:</strong></p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Glossy
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Matte
-                                </label>
-                            </div>
+                            <select class="form-control rounded-0 w-50" name="product_finish" id='id_product_finish'>
+                                <option value="glossy">Glossy</option>
+                                <option value="matte" selected>Matte</option>                       
+                        </select>
                             {% endif %}
+                        </div>
                         </div>
                         <div class="form-row">
                             <div class="col-12">
