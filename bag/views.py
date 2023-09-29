@@ -17,36 +17,35 @@ def add_to_bag(request, item_id):
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    elif 'product_finish' in request.POST:
+    if 'product_finish' in request.POST:
         finish = request.POST['product_finish']
-    
     bag = request.session.get('bag', {})
 
-    if size or finish:
+    if size:
         if item_id in list(bag.keys()):
-            if 'items' in bag[item_id]:
-                bag[item_id]['items']['quantity'] += quantity
-                if size:
-                    bag[item_id]['items']['size'] = size
-                if finish:
-                    bag[item_id]['items']['finish'] = finish
+            if size in bag[item_id]['items_by_size'].keys():
+                bag[item_id]['items_by_size'][size] += quantity
             else:
-                bag[item_id]['items'] = {
-                    'quantity': quantity,
-                    'size': size,
-                    'finish': finish
-                }
+                bag[item_id]['items_by_size'][size] = quantity
         else:
-            bag[item_id] = {'items': {
-                'quantity': quantity,
-                'size': size,
-                'finish': finish
-            }}
+            bag[item_id] = {'items_by_size': {size: quantity}}
     else:
         if item_id in list(bag.keys()):
-            bag[item_id]['quantity'] += quantity
+            bag[item_id] += quantity
         else:
-            bag[item_id] = {'quantity': quantity}
+            bag[item_id] = quantity
+
+    if finish:
+        if item_id in list(bag.keys()):
+            if 'items_by_finish' in bag[item_id]:
+                if finish in bag[item_id]['items_by_finish'].keys():
+                    bag[item_id]['items_by_finish'][finish] += quantity
+                else:
+                    bag[item_id]['items_by_finish'][finish] = quantity
+            else:
+                bag[item_id]['items_by_finish'] = {finish: quantity}
+        else:
+            bag[item_id] = {'items_by_finish': {finish: quantity}}
 
     request.session['bag'] = bag
     return redirect(redirect_url)

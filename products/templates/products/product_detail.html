@@ -60,21 +60,18 @@
                                 <option value="l">L</option>
                             </select>
                         </div>
-            
-                        </div>
                         {% endif %}
-                        <div class="form-row">
                         <!-- Choose Finish -->
                         {% with product.has_finish as f %}
-                        {% if f %}
+                        {% if s %}
                         <div class="col-12">
-                            <p><strong>Select Finish:</strong></p>
+                            <p><strong>Finish:</strong></p>
                             <select class="form-control rounded-0 w-50" name="product_finish" id='id_product_finish'>
                                 <option value="glossy">Glossy</option>
-                                <option value="matte" selected>Matte</option>                       
-                        </select>
-                            {% endif %}
+                                <option value="matte" selected>Matte</option>
+                            </select>
                         </div>
+                        {% endif %}
                         </div>
                         <div class="form-row">
                             <div class="col-12">
