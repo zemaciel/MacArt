@@ -7,9 +7,6 @@ html {
 }
 
 body {
-    /* background: url('/media/hero_image_bicycles_in_dublin.webp') no-repeat center center fixed; */
-    /* background-size: cover; */
-    /* height: calc(100vh - 164px); */
     color: #555;
     font-family: 'Barlow';
 }
@@ -41,7 +38,7 @@ main {
     padding: 10px 0;
 }
 
-/* BRAND */
+/* ________ BRAND ________ */
 .macart-font {
     font-family: Aboreto, sans-serif;
 }
@@ -50,7 +47,7 @@ main {
     color: #E94E1B;
 }
 
-/* from Bulma */
+/* ________ from Bulma ________ */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -128,7 +125,7 @@ main {
     flex-grow: 1;
 }
 
-/* Category Badges */
+/* ________ Category Badges ________ */
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
@@ -148,7 +145,7 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
-/* ------------------------------- bootstrap toasts */
+/* ________ BOOTSTRA TOASTS ________ */
 
 .message-container {
     position: fixed;
@@ -177,7 +174,7 @@ a.category-badge > span.badge:hover {
     right: 36px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/* ________ BOOTSTRAP CLASSES ________ */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -216,7 +213,7 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
-/* -------------------------------- Media Queries */
+/* ________ MEDIA QUERIES ________ */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
