@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category, Format
+from .models import Product, Category
 from .forms import ProductForm
 
+# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -15,7 +16,6 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    formats = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -24,30 +24,25 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-
-    if request.GET:
+            
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        if 'format' in request.GET:
-            formats = request.GET['format'].split(',')
-            products = products.filter(format__name__in=formats)
-            formats = Format.objects.filter(name__in=formats)
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Please enter a search criteria")
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-
+            
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -57,7 +52,6 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
-        'current_formats': formats,
         'current_sorting': current_sorting,
     }
 
@@ -81,9 +75,9 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -95,6 +89,7 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
 
 def edit_product(request, product_id):
     """ Edit a product in the store """
@@ -118,3 +113,11 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
