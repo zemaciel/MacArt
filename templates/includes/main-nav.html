@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -14,7 +14,7 @@
         </li>
 <!-- Option to display product Photos by Category -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="theme-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="theme-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Category
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="theme-link">
@@ -27,7 +27,7 @@
         </li>
 <!-- Option to display product Photos by Format -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="format-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="format-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Format
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="format-link">
@@ -39,18 +39,23 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="publications-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Publications
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Art Magazines</a>
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="publications-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Publications</a>
+            <div class="dropdown-menu border-0" aria-labelledby="publications-link">
                 <a href="{% url 'products' %}?category=book" class="dropdown-item">Books</a>
                 <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
                 <a href="{% url 'products' %}?category=book,calendar" class="dropdown-item">All Publications</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}#about">About</a>
+        <li class="nav-item dropdown">
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us</a>
+            <div class="dropdown-menu border-0" aria-labelledby="publications-link">
+                <a href="{% url 'home' %}#about" class="dropdown-item">About Us</a>
+                <a href="" class="dropdown-item">Photographers</a>
+                <a href="" class="dropdown-item">F&Qs</a>
+                <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
+            </div>
         </li>
 
     </ul>

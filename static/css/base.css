@@ -82,6 +82,24 @@ main {
     min-width: 260px;
 }
 
+.macart-button {
+    background: black;
+    font-family: Aboreto, sans-serif;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0;
+}
+
+.macart-button:hover,
+.macart-button:active,
+.macart-button:focus{
+    background: #555;
+    color: white;
+    corner
+}
+
+
+
 .btn-black {
     background: black;
     color: white;
