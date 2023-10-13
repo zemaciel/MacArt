@@ -163,12 +163,15 @@
 
         </main>
 
-        <footer class="footer">
+        <footer>
+            {% include 'includes/footer.html' %}
+        </footer>
+        <!-- <footer class="footer">
             <div class="container">
                 <p>&copy; {% now "Y" %} Macart Fine Art Photos. All rights reserved. Site created for educational
                     purposes only </p>
             </div>
-        </footer>
+        </footer> -->
     </div>
     {% block postloadjs %}
     <script type="text/javascript">

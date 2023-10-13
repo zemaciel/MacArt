@@ -39,12 +39,35 @@ main {
         align-self: center;
     }
 
+
+/* ________ FOOTER________ */
 .footer {
     background-color: #555;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0;    
 }
+
+.footer a {
+    color: #fff;
+}
+
+.icon-footer {
+    color: #fff;
+    padding: 10px;
+}
+
+.main-footer {
+    background-color: #393939;
+    color: #fff;
+}
+
+.main-footer a {
+    color: #fff;
+}
+
+
+
 
 /* ________ BRAND ________ */
 .macart-font {
