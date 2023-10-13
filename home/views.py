@@ -1,22 +1,36 @@
-from django.shortcuts import render
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
 
 from .forms import ContactForm
 
 def index(request):
-    """ A view to return the index page """
     return render(request, 'home/index.html')
 
-
 def contact(request):
-    """View to the contact page (from: youtu.be/dnhEnF7_RyM) """
+    """ View to the contact page (from: youtu.be/dnhEnF7_RyM) """
     if request.method == 'POST':
         form = ContactForm(request.POST)
+
         if form.is_valid():
-            print('the form was valid')
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            content = form.cleaned_data['content']
+
+            # print(form.cleaned_data['email'])
+            # print('the form was valid')
+
+            html = render_to_string('home/emails/contactform.html', {
+                'name': name,
+                'email': email,
+                'content': content,
+            })
+
+            send_mail('The contact Form subject', 'This is the message',
+                      'noreply@macart.com', ['joemacdesign@gmail.com'], html_message=html)
 
             return redirect('home')
     else:
         form = ContactForm()
 
     return render(request, 'home/contact.html', {'form': form})
-
