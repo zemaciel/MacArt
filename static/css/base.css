@@ -348,7 +348,10 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-
+.googlemaps {
+    width: 500px;
+    height: 350px;
+}
 /* ________ MEDIA QUERIES ________ */
 
 /* Slightly larger container on xl screens */
@@ -381,5 +384,13 @@ input[name='q']::placeholder {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+/* GoogleMaps iframe  */
+@media (max-width: 991px) {
+    .googlemaps {
+        width: 100%;
+        height: 350px;
     }
 }
