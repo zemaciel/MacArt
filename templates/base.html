@@ -9,9 +9,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+    content="Fine art photography prints to decorate your space">
+    <meta name="keywords"
+    content="fine art photos, street photography, architectural photography, landscape photography, 
+    prints, wall art, home decor, interior decoration, photographers, artists">
+
+
     {% endblock %}
 
     {% block extra_meta %}
+    {% endblock %}
+
+    {% block favicon %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     {% endblock %}
 
     {% block corecss %}
@@ -23,6 +36,7 @@
         href="https://fonts.googleapis.com/css2?family=Aboreto&family=Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
     {% block extra_css %}

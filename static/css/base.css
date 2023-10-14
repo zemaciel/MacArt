@@ -113,6 +113,11 @@ main {
     border-radius: 0;
 }
 
+.macart-subscribe-button {
+    max-width: 250px;
+}
+
+
 .macart-button:hover,
 .macart-button:active,
 .macart-button:focus{
