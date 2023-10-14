@@ -19,54 +19,36 @@
         </div>
     </div>
     <div class="row">
-        {% for product in products %}
-        <!-- PRODUCT CARD -->
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        {% for artist in artists %}
+        <!-- ARTIST CARD -->
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
             <div class="card h-100 border-0">
-                {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% if artist.artist_image %}
+                <a href="{% url 'artist_detail' artist.id %}">
+                    <img class="card-img-top img-fluid artist-photo" src="{{ artist.artist_image.url }}" alt="{{ artist.name }}">
                 </a>
                 {% else %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                <a href="{% url 'artist_detail' artist.id %}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ artist.name }}">
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <h5 class="mb-0 py-3 macart-font">{{ artist.name }}</h5>
                 </div>
-                <!-- Product Footer -->
-                <div class="card-footer bg-white pt-0 border-0 text-left">
+                <!-- Artist Footer -->
+                <div class="card-footer artist-card-footer">
                     <div class="row">
-                        <div class="col">
-                            <p class="lead mb-0 text-left macart-font">€{{ product.price }}</p>
-                            {% if product.category %}
-                            <p class="small mt-1 mb-0 font-weight-bold">
-                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                    <i class="fas fa-camera mr-1"></i>{{ product.category.friendly_name }}
-                                </a>
+                        <div class="col text-center">
+                            <p>
+                                <a class="artist-link" href="{% url 'artist_detail' artist.id %}">View Profile</a>
                             </p>
-                            {% endif %}
-                            {% if product.rating %}
-                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                5</small>
-                            {% else %}
-                            <small class="text-muted">No Rating</small>
-                            {% endif %}
-                            <!-- Product Management -->
-                            {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                            </small>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
-                <!-- end product footer -->
+                <!-- end artist footer -->
             </div>
         </div>
-        <!-- end PRODUCT CARD -->
+        <!-- end ARTIST CARD -->
         {% if forloop.counter|divisibleby:1 %}
         <div class="col-12 d-sm-none mb-5">
             <hr>
