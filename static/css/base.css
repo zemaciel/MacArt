@@ -33,6 +33,12 @@ main {
 }
 
 .card-img-top {
+        width: auto;
+        object-fit: cover;
+        align-self: center;
+    }
+
+.card-img-all-products {
         max-height: 296px;
         width: auto;
         object-fit: cover;

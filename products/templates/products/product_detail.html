@@ -13,6 +13,7 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
+        <!-- LEFT COLUMN  -->
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
@@ -24,12 +25,16 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
+                <div class="artist-info">
+                    <p>Test</p>
+                </div>
             </div>
         </div>
+        <!-- RIGHT COLUMN  -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0">{{ product.name }}</p>
-               
+
                 {% if product.category %}
                 <p class="small mt-1 mb-0 font-weight-bold">
                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -37,6 +42,14 @@
                     </a>
                 </p>
                 {% endif %}
+                <!-- Artist  -->
+                {% if product.artist %}
+                <p class="artist-link mt-2 mb-0">
+                    <strong>Artist:</strong>
+                    <a href="{% url 'artist_detail' product.artist.id %}">{{ product.artist.name }}</a>
+                </p>
+                {% endif %}
+                <!-- Rating -->
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
@@ -50,10 +63,11 @@
                 </small>
                 {% endif %}
                 <p class="mt-3">{{ product.description }}</p>
-                <p class="lead mb-0 text-left macart-font">€{{ product.price }}</p>
+                <p class="lead my-1 text-left macart-font">€{{ product.price }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        <!-- PRODUCTS WITH SIZE -->
                         {% with product.has_sizes as s %}
                         {% if s %}
                         <div class="col-12">
@@ -63,6 +77,53 @@
                                 <option value="m" selected>M</option>
                                 <option value="l">L</option>
                             </select>
+                        </div>
+                        <div class="size-guide py-3">
+                            <p>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    Link with href
+                                </a>
+                                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    Button with data-target
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Format</th>
+                                            <th scope="col">Small</th>
+                                            <th scope="col">Medium</th>
+                                            <th scope="col">Large</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">Horizontal</th>
+                                            <td>12″x8″</td>
+                                            <td>18″x12″</td>
+                                            <td>36″x24″</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">Vertical</th>
+                                            <td>8"x12</td>
+                                            <td>12"x18”</td>
+                                            <td>24"x36</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">Square</th>
+                                            <td>12"x12”</td>
+                                            <td>18"x"18"</td>
+                                            <td>24"x24”</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
                         </div>
                         {% endif %}
                         <div class="col-12">
