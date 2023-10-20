@@ -25,28 +25,29 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
-                <div class="artist-info">
-                    <p>Test</p>
-                </div>
             </div>
         </div>
         <!-- RIGHT COLUMN  -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
+                <h3 class="mb-0">{{ product.name }}</h3>
 
+                <!-- Artist  -->
+                {% if product.artist %}
+                <div class="artist-label my-3">
+                    <p class="mt-2 mb-0">
+                        <strong>Artist:</strong>
+                        <a href="{% url 'artist_detail' product.artist.id %}">{{ product.artist.name }}</a>
+                    </p>
+                </div>
+
+                {% endif %}
+                <!-- Category  -->
                 {% if product.category %}
                 <p class="small mt-1 mb-0 font-weight-bold">
                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                         <i class="fas fa-camera mr-1"></i>{{ product.category.friendly_name }}
                     </a>
-                </p>
-                {% endif %}
-                <!-- Artist  -->
-                {% if product.artist %}
-                <p class="artist-link mt-2 mb-0">
-                    <strong>Artist:</strong>
-                    <a href="{% url 'artist_detail' product.artist.id %}">{{ product.artist.name }}</a>
                 </p>
                 {% endif %}
                 <!-- Rating -->
@@ -78,50 +79,53 @@
                                 <option value="l">L</option>
                             </select>
                         </div>
+                        <!-- Table of sizes -->
                         <div class="size-guide py-3">
                             <p>
-                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
-                                    aria-expanded="false" aria-controls="collapseExample">
-                                    Link with href
+                                <a class="btn-small text-uppercase text-muted" data-toggle="collapse"
+                                    href="#collapseExample" role="button" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    Size Guide
                                 </a>
-                                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                <!-- <button class="btn btn-primary" type="button" data-toggle="collapse"
                                     data-target="#collapseExample" aria-expanded="false"
                                     aria-controls="collapseExample">
                                     Button with data-target
-                                </button>
+                                </button> -->
                             </p>
+
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body">
                                     <table class="table">
                                         <thead>
-                                          <tr>
-                                            <th scope="col">Format</th>
-                                            <th scope="col">Small</th>
-                                            <th scope="col">Medium</th>
-                                            <th scope="col">Large</th>
-                                          </tr>
+                                            <tr>
+                                                <th scope="col">Format</th>
+                                                <th scope="col">Small</th>
+                                                <th scope="col">Medium</th>
+                                                <th scope="col">Large</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                          <tr>
-                                            <th scope="row">Horizontal</th>
-                                            <td>12″x8″</td>
-                                            <td>18″x12″</td>
-                                            <td>36″x24″</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">Vertical</th>
-                                            <td>8"x12</td>
-                                            <td>12"x18”</td>
-                                            <td>24"x36</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">Square</th>
-                                            <td>12"x12”</td>
-                                            <td>18"x"18"</td>
-                                            <td>24"x24”</td>
-                                          </tr>
+                                            <tr>
+                                                <th scope="row">Horizontal</th>
+                                                <td>12″x8″</td>
+                                                <td>18″x12″</td>
+                                                <td>36″x24″</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Vertical</th>
+                                                <td>8"x12</td>
+                                                <td>12"x18”</td>
+                                                <td>24"x36</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Square</th>
+                                                <td>12"x12”</td>
+                                                <td>18"x"18"</td>
+                                                <td>24"x24”</td>
+                                            </tr>
                                         </tbody>
-                                      </table>
+                                    </table>
                                 </div>
                             </div>
                         </div>

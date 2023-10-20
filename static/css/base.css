@@ -303,6 +303,13 @@ input[name='q']::placeholder {
     text-decoration: none;
 }
 
+.artist-label {
+    color: #555;
+}
+.artist-label a {
+    color: #636363;
+    font-size: 1.2rem;
+}
 
 /* Allauth form formatting */
 
