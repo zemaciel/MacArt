@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Artist, SocialMedia
-
+from .forms import ArtistForm, SocialMediaForm
 
 
 def all_artists(request):
@@ -27,3 +27,15 @@ def artist_detail(request, artist_id):
     }
 
     return render(request, 'artists/artist_detail.html', context)
+
+
+def add_artist(request):
+    """ Add an artist """
+    form = ArtistForm()
+    template = 'artists/add_artist.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+

@@ -54,8 +54,8 @@
             {% endif %}
             <!-- site -->
             {% if social_media.site %}
-            <a href="{{ social_media.site }}" target="_blank" rel="noopener"
-                aria-label="Site of {{ artist.name }}" class="artist-link">
+            <a href="{{ social_media.site }}" target="_blank" rel="noopener" aria-label="Site of {{ artist.name }}"
+                class="artist-link">
                 <i class="fa-solid fa-link fa-lg px-2" aria-hidden="true"></i>
             </a>
             {% endif %}
@@ -65,31 +65,10 @@
     </div>
 </div>
 
-
-
 <div class="row">
     <div class="product-container col-10 offset-1">
         <h3 class="macart-font text-center">Works by {{ artist.name }}</h3>
         <div class="row mt-1 mb-2">
-            <!-- SORT SELECT -->
-            <!-- <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end"> -->
-            <!-- Sort Selet Box -->
-            <!-- <div class="sort-select-wrapper w-50">
-                    <select id="sort-selector"
-                        class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
-                        </option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
-                            (low to high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
-                            (high to low)</option>
-                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
-                            Rating (low to high)</option>
-                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
-                            Rating (high to low)</option>
-                    </select>
-                </div>
-            </div> -->
             <!-- PRODUCT COUNT AND SEARCH RESULTS -->
             <div class="col-12 col-md-6 order-md-first">
                 <p class="text-muted mt-3 text-center text-md-left">
@@ -196,8 +175,3 @@
 </div>
 
 {% endblock %}
-
-<!-- {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
-{% endblock %} -->
