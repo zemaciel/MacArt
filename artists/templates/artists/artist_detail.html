@@ -31,10 +31,35 @@
             </div>
             <!-- Artist Social Media -->
             {% if social_media %}
+            <!-- facebook -->
             {% if social_media.facebook %}
-            <a href="{{ social_media.facebook }}" target="_blank">Facebook</a>
-         {% endif %}
-         {% endif %}
+            <a href="{{ social_media.facebook }}" target="_blank" rel="noopener nofollow"
+                aria-label="Facebok of {{ artist.name }}" class="artist-link">
+                <i class="fab fa-facebook fa-lg px-2" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            <!-- instagram -->
+            {% if social_media.instagram %}
+            <a href="{{ social_media.instagram }}" target="_blank" rel="noopener nofollow"
+                aria-label="Instagram of {{ artist.name }}" class="artist-link">
+                <i class="fab fa-instagram fa-lg px-2" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            <!-- x -->
+            {% if social_media.x %}
+            <a href="{{ social_media.x }}" target="_blank" rel="noopener nofollow"
+                aria-label="X (Former Twitter) of {{ artist.name }}" class="artist-link">
+                <i class="fab fa-x-twitter fa-lg px-2" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            <!-- site -->
+            {% if social_media.site %}
+            <a href="{{ social_media.site }}" target="_blank" rel="noopener"
+                aria-label="Site of {{ artist.name }}" class="artist-link">
+                <i class="fa-solid fa-link fa-lg px-2" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            {% endif %}
             <hr class="w-50 mb-1" />
         </div>
     </div>
@@ -153,30 +178,22 @@
 </div>
 </div>
 
-
-
-
-
-
-
 <!-- NAVIGATION BUTTONS -->
 <div class="row justify-content-center py-3">
-    <div class="col-md-6 text-center mt-3 bg-yellow">
+    <div class="col-md-2 text-center mt-3 bg-yellow">
         <h4>
             <a href="{% url 'artists' %}"
                 class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
         </h4>
 
     </div>
-    <div class="col-md-6 text-center mt-3 bg-red">
+    <div class="col-md-2 text-center mt-3 bg-red">
         <h4>
             <a href="{% url 'products' %}"
                 class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
         </h4>
     </div>
-
 </div>
-
 
 {% endblock %}
 
