@@ -29,6 +29,13 @@
                 <p>{{ artist.bio }}</p>
                 <hr class="w-50 mb-1" />
             </div>
+            <!-- Artist Social Media -->
+            {% if social_media %}
+            {% if social_media.facebook %}
+            <a href="{{ social_media.facebook }}" target="_blank">Facebook</a>
+         {% endif %}
+         {% endif %}
+            <hr class="w-50 mb-1" />
         </div>
     </div>
 </div>
@@ -41,8 +48,8 @@
         <div class="row mt-1 mb-2">
             <!-- SORT SELECT -->
             <!-- <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end"> -->
-                <!-- Sort Selet Box -->
-                <!-- <div class="sort-select-wrapper w-50">
+            <!-- Sort Selet Box -->
+            <!-- <div class="sort-select-wrapper w-50">
                     <select id="sort-selector"
                         class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
@@ -76,12 +83,12 @@
                 <div class="card h-100 border-0">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top card-img-all-products img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img class="card-img-top card-img-all-products img-fluid" src="{{ product.image.url }}"
+                            alt="{{ product.name }}">
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                            alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                     {% endif %}
                     <div class="card-body pb-0">

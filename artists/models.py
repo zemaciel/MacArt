@@ -10,3 +10,11 @@ class Artist(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SocialMedia(models.Model):
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    facebook = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    x = models.URLField(blank=True, null=True)
+    site = models.URLField(blank=True, null=True)
