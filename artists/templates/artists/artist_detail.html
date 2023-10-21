@@ -11,8 +11,9 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid">
 
+<!-- ARTIST CARD -->
+<div class="container-fluid">
     <div class="row justify-content-center py-3">
         <div class="col-md-6 text-center mt-3">
             <!-- Artist Image -->
@@ -30,27 +31,149 @@
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="row justify-content-center py-3">
-        <div class="col-md-6 text-center mt-3 bg-yellow">
-            <h4>
-                <a href="{% url 'artists' %}" class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
-            </h4>
 
+<div class="row">
+    <div class="product-container col-10 offset-1">
+        <h3 class="macart-font text-center">Works by {{ artist.name }}</h3>
+        <div class="row mt-1 mb-2">
+            <!-- SORT SELECT -->
+            <!-- <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end"> -->
+                <!-- Sort Selet Box -->
+                <!-- <div class="sort-select-wrapper w-50">
+                    <select id="sort-selector"
+                        class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        </option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                            (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                            (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                            Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
+                            Rating (high to low)</option>
+                    </select>
+                </div>
+            </div> -->
+            <!-- PRODUCT COUNT AND SEARCH RESULTS -->
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-3 text-center text-md-left">
+                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for
+                    <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
         </div>
-        <div class="col-md-6 text-center mt-3 bg-red">
-            <h4>
-                <a href="{% url 'products' %}" class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
-            </h4>
+        <div class="row">
+            {% for product in artist.product_set.all %}
+            <!-- PRODUCT CARD -->
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100 border-0">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top card-img-all-products img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body pb-0">
+                        <p class="mb-0">{{ product.name }}</p>
+                    </div>
+                    <!-- Product Footer -->
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                <p class="lead mb-0 text-left macart-font">€{{ product.price }}</p>
+                                {% if product.category %}
+                                <p class="small mt-1 mb-0 font-weight-bold">
+                                    <a class="text-muted"
+                                        href="{% url 'products' %}?category={{ product.category.name }}">
+                                        <i class="fas fa-camera mr-1"></i>{{ product.category.friendly_name }}
+                                    </a>
+                                </p>
+                                {% endif %}
+                                {% if product.rating %}
+                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                    5</small>
+                                {% else %}
+                                <small class="text-muted">No Rating</small>
+                                {% endif %}
+                                <!-- Product Management -->
+                                {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end product footer -->
+                </div>
+            </div>
+            <!-- end PRODUCT CARD -->
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
+    </div>
+</div>
+</div>
 
+
+
+
+
+
+
+<!-- NAVIGATION BUTTONS -->
+<div class="row justify-content-center py-3">
+    <div class="col-md-6 text-center mt-3 bg-yellow">
+        <h4>
+            <a href="{% url 'artists' %}"
+                class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
+        </h4>
+
+    </div>
+    <div class="col-md-6 text-center mt-3 bg-red">
+        <h4>
+            <a href="{% url 'products' %}"
+                class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
+        </h4>
     </div>
 
 </div>
+
+
 {% endblock %}
 
-{% block postloadjs %}
+<!-- {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
+{% endblock %} -->
