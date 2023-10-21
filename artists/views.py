@@ -99,3 +99,14 @@ def edit_artist(request, artist_id):
 
     return render(request, template, context)
 
+
+@login_required
+def delete_artist(request, artist_id):
+    """ Delete an artist profile """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only staff can do that.')
+        return redirect(reverse('home'))
+    artist = get_object_or_404(Artist, pk=artist_id)
+    artist.delete()
+    messages.success(request, 'Artist profile deleted!')
+    return redirect(reverse('products'))
