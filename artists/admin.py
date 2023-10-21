@@ -11,6 +11,7 @@ class ArtistAdmin(admin.ModelAdmin):
 
 class SocialMediaAdmin(admin.ModelAdmin):
     list_display = (
+        'artist',
         'facebook', 
         'instagram',
         'x',
@@ -18,4 +19,4 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Artist)
-admin.site.register(SocialMedia)
+admin.site.register(SocialMedia, SocialMediaAdmin)
