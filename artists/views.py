@@ -31,11 +31,13 @@ def artist_detail(request, artist_id):
 
 def add_artist(request):
     """ Add an artist """
-    form = ArtistForm()
+    artist_form = ArtistForm()
+    social_media_form = SocialMediaForm()
+
     template = 'artists/add_artist.html'
     context = {
-        'form': form,
+        'artist_form': artist_form,
+        'social_media_form': social_media_form,
     }
 
     return render(request, template, context)
-

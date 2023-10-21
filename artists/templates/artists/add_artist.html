@@ -25,12 +25,17 @@
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_artist' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {% for field in form %}
+                    {% for field in artist_form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
                         {% endif %}
+                    {% endfor %}
+
+                    {% for field in social_media_form %}
+                        {{ field | as_crispy_field }}
+                        
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'artists' %}">Cancel</a>
@@ -41,6 +46,9 @@
         </div>
 
 {% endblock %}
+
+'artist_form': artist_form,
+        'social_media_form': social_media_form,
 
 {% block postloadjs %}
     {{ block.super }}
