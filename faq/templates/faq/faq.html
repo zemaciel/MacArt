@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center mt-3">
+      <h2 class="macart-font">Questions And Answers</h2>
+      <hr class="w-50 mb-1" />
+    </div>
+  </div>
+  <div class="row">
+    <!-- FAQ card -->
+    <div class="col-md-10 text-center">
+    {% for faq in faqs %}
+    <h3>{{ faq.question }}</h3>
+    <p>{{ faq.answer }}</p>
+</div>
+{% endfor %}
+  
+{% endblock %}
