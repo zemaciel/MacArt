@@ -411,8 +411,13 @@ input[name='q']::placeholder {
 
 
 /* FAQ */
-.fqa_list {
+.faq_list {
     justify-content: center;
+}
+
+.faq-footer {
+    border-bottom: #E94E1B 3px solid;
+    margin-bottom: 2rem;
 }
 
 .faq-question {
