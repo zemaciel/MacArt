@@ -13,13 +13,24 @@
       <hr class="w-50 mb-1" />
     </div>
   </div>
+
+  <!-- FAQ card -->
   <div class="row">
-    <!-- FAQ card -->
-    <div class="col-md-10 text-center">
     {% for faq in faqs %}
-    <h3>{{ faq.question }}</h3>
-    <p>{{ faq.answer }}</p>
-</div>
-{% endfor %}
-  
-{% endblock %}
+    <div class="fqa_list col-12 col-md-6 text-center">
+      <p>
+        <a class=".faq-question" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <h3>{{ faq.question }}</h3>
+        </a>
+      </p>
+
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% endblock %}

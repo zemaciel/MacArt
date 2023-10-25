@@ -10,21 +10,23 @@ body {
     color: #3b3b3b;
     font-family: 'Barlow';
 }
+
 .flex-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 main {
     flex-grow: 1;
 }
 
 .hero-section {
-    background-image: url('/media/hero_image_bicycles_in_dublin.webp'); 
+    background-image: url('/media/hero_image_bicycles_in_dublin.webp');
     background-size: cover;
     background-position: center;
     height: calc(100vh - 160px);
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
 .about-container {
@@ -33,17 +35,17 @@ main {
 }
 
 .card-img-top {
-        width: auto;
-        object-fit: cover;
-        align-self: center;
-    }
+    width: auto;
+    object-fit: cover;
+    align-self: center;
+}
 
 .card-img-all-products {
-        max-height: 296px;
-        width: auto;
-        object-fit: cover;
-        align-self: center;
-    }
+    max-height: 296px;
+    width: auto;
+    object-fit: cover;
+    align-self: center;
+}
 
 
 /* ________ FOOTER________ */
@@ -51,7 +53,7 @@ main {
     background-color: #3b3b3b;
     color: #fff;
     text-align: center;
-    padding: 10px 0;    
+    padding: 10px 0;
 }
 
 .footer a {
@@ -94,7 +96,7 @@ main {
 }
 
 .macart-font {
-        font-family: Aboreto, sans-serif;
+    font-family: Aboreto, sans-serif;
 }
 
 .bg-black-80pc {
@@ -125,7 +127,7 @@ main {
 
 .macart-button:hover,
 .macart-button:active,
-.macart-button:focus{
+.macart-button:focus {
     background: #3b3b3b;
     color: white;
     border-radius: 0%;
@@ -139,7 +141,8 @@ main {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -173,18 +176,18 @@ main {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
     flex-grow: 1;
 }
 
 /* ________ Category Badges ________ */
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
@@ -226,10 +229,10 @@ input[name='q']::placeholder {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
@@ -306,6 +309,7 @@ input[name='q']::placeholder {
 .artist-label {
     color: #3b3b3b;
 }
+
 .artist-label a {
     color: #636363;
     font-size: 1.2rem;
@@ -315,8 +319,10 @@ input[name='q']::placeholder {
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -334,8 +340,8 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -352,18 +358,19 @@ input[name='q']::placeholder {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8;
+    /* text-info */
 }
 
 /* Product Form */
@@ -398,13 +405,42 @@ input[name='q']::placeholder {
     width: 500px;
     height: 350px;
 }
+
+
+
+
+
+/* FAQ */
+.fqa_list {
+    justify-content: center;
+}
+
+.faq-question {
+    color: #3b3b3b;
+    font-family: 'Barlow';
+    font-weight: 400;
+}
+
+.faq-question:hover,
+.faq-question:active,
+.faq-question:focus {
+    color: #E94E1B;
+    text-decoration: none;
+    font-weight: 600;
+}
+}
+
+
+
+
+
 /* ________ MEDIA QUERIES ________ */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
@@ -432,30 +468,47 @@ input[name='q']::placeholder {
         height: calc(100vh - 116px);
     }
 
-.display-4.macart-font.text-black {
-    font-size: 2rem;
-}
+    .display-4.macart-font.text-black {
+        font-size: 2rem;
+    }
 
-.nav-link {
-    padding: 0.15rem;
-}
+    .nav-link {
+        padding: 0.15rem;
+    }
 
-.nav-link i.fa-lg {
-    font-size: 1rem;
-}
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
 
-.navbar-toggler {
-    padding: 0.6rem 0.6rem;
-    font-size: 1rem;
-}
+    .navbar-toggler {
+        padding: 0.6rem 0.6rem;
+        font-size: 1rem;
+    }
 
-#delivery-banner h4 {
-    font-size: 0.9rem;
-}
+    #delivery-banner h4 {
+        font-size: 0.9rem;
+    }
 
-.hero-section h1 {
-    font-size: 2rem;
-}
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: 0.375rem 0.375rem;
+    }
+
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: 0.375rem 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .increment-qty,
+    .decrement-qty {
+        padding: 0.25rem 0.5rem !important;
+    }
+
 }
 
 /* GoogleMaps iframe  */
