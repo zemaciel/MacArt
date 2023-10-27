@@ -11,35 +11,114 @@
 
 {% block content %}
 <!-- Hero section -->
-<div class="hero-section">
-    <div class="row h-100">
-        <div class="pl-0 col-md-4 my-auto">
-            <div class="bg-black-80pc">
-                <h1 class="pl-5 display-4 macart-font text-white">
-                    Fine <span class="text-orange">Art </span></br>Photos
-                </h1>
+<main>
+    <div class="hero-section">
+        <div class="row h-100">
+            <div class="pl-0 col-md-4 my-auto">
+                <div class="bg-black-80pc">
+                    <h1 class="pl-5 display-4 macart-font text-white">
+                        Fine <span class="text-orange">Art </span></br>Photos
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="about-container" id="about">
+        <div class="container">
+            <!-- Welcome -->
+            <div class="row">
+                <div class="col-md-8 offset-md-2 my-3">
+                    <h2 class="macart-font">MacArt Fine Art Photo</h2>
+                    <p>Welcome to <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span>
+                        Fine
+                        Art Photos, your premier destination for enhancing the ambiance of your home or office with
+                        exquisite, high-quality prints. </p>
+                    <p>Explore our curated selection of photographs, as our talented photographers generously open their
+                        archives to share their unique perspectives on the world.
+                        Our diverse collection offers images in three distinct formats: <strong>square, portrait, and
+                            landscape</strong>, allowing you to choose the perfect composition for your space. Select
+                        from
+                        medium, small, or large sizes to ensure an ideal fit for your wall.
+                        Our gallery is brimming with captivating fine art photography, waiting to adorn and elevate your
+                        surroundings.</p>
+
+                    <h5> What is fine art and why choose a <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span> Fine Art Photo for your space? </h5>
+
+                    <p><strong>Fine art photography is more than just a picture.</strong> It's a blend of emotion, vision, and artistic
+                        expression, masterfully captured by photographers. When you bring a <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span> Fine Art Photo into
+                        your space, you're not just adding decor - you're introducing a story, a conversation starter, and a
+                        piece of art that evokes feelings and inspires thoughts. It's a perfect way to elevate the
+                        ambiance of any room and showcase your unique taste. With our curated selection, you're sure to find that
+                        one-of-a-kind piece that resonates with you. Dive into the world of art with <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span> and let your
+                        walls speak volumes!</p>
+                    <p><strong>Browse our gallery today and discover the perfect fine art photography to enhance the spaces you
+                        cherish. Transform your environment with our captivating prints.</strong>
+                    </p>
+
+                    <h4>
+                        <a href="{% url 'products' %}"
+                            class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our
+                            gallery</a>
+                    </h4>
+                </div>
+            </div>
+            <!-- Artists -->
+            <div class="row">
+                <div class="col-md-8 offset-md-2 my-3">
+                    <h4 class="macart-font">Meet the Artists Behind the Lens</h4>
+                    <p>Our fine art gallery is not just a collection of photographs, but a celebration of the passionate
+                        photographers behind them. Each artist brings a distinct style, story, and vision to our
+                        platform.
+                        By clicking the link below, you'll be introduced to the talented individuals who've captured the
+                        world in such profound ways. Dive deep into their portfolios, learn about their journeys, and
+                        discover the inspiration behind their works.</p>
+
+                    <h4>
+                        <a href="{% url 'artists' %}"
+                            class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Our Artists</a>
+                    </h4>
+                </div>
+            </div>
+            <!-- Associations -->
+            <div class="row">
+                <div class="col-md-8 offset-md-2 my-3">
+                    <h4 class="macart-font">Associations & Recognitions</h4>
+                    <p>The talent of our photographers is recognized and celebrated beyond our platform. Many are
+                        esteemed contributors to world-renowned platforms like Alamy, Getty Images, FineArtAmerica, and have
+                        received accolades from respected institutions such as the Dublin Camera Club. These associations not
+                        only underline their proficiency but also guarantee the premium quality and credibility of the art
+                        you purchase. When you invest in a piece from MacArt Fine Art Photos, you're acquiring work that is
+                        recognized, respected, and cherished globally.</p>
+                </div>
+            </div>
+        </div>
+</main>
+<!-- Associations Logos -->
+<div class="row">
+    <div class="text-center col-md-12 my-3 bg-light mb-0 py-2">
+        <div class="container overflow-hidden">
+            <div class="row gy-5 gy-md-6">
+                <div class="col-6 col-md-3 align-self-center text-center">
+                    <img src="/media/logos/logo_alamy.png" width="75" class="association-logos py-3"
+                        alt="Our artist are regular contributors to Alamy">
+                </div>
+                <div class="col-6 col-md-3 align-self-center text-center">
+                    <img src="/media/logos/logo_dcc.png" width="75" class="association-logos py-3"
+                        alt="Our artist are associated to the Dublin Camera Club">
+                </div>
+                <div class="col-6 col-md-3 align-self-center text-center">
+                    <img src="/media/logos/logo_getty.png" width="125" class="association-logos py-3"
+                        alt="Association Logo">
+                </div>
+                <div class="col-6 col-md-3 align-self-center text-center">
+                    <img src="/media/logos/logo_finaart.png" width="125" class="association-logos py-3"
+                        alt="Association Logo">
+                </div>
             </div>
         </div>
     </div>
-
 </div>
-
-<div class="about-container" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 my-3">
-                <h2>Welcome</h2>
-                <p>Welcome to <span class="macart-font">Mac</span><span class="macart-font text-orange">Art</span> Fine Art Photos, your premier destination for enhancing the ambiance of your home or office with exquisite, high-quality prints. </p><p>Explore our curated selection of photographs, as our talented photographers generously open their archives to share their unique perspectives on the world.
-                    Our diverse collection offers images in three distinct formats: <strong>square, portrait, and landscape</strong>, allowing you to choose the perfect composition for your space. Select from medium, small, or large sizes to ensure an ideal fit for your wall.
-                    Our gallery is brimming with captivating fine art photography, waiting to adorn and elevate your surroundings.</p>
-                    <p>Browse our gallery today and discover the perfect fine art photography to enhance the spaces you cherish. 
-                    Transform your environment with our captivating prints.</p>
-           
-                <h4>
-                    <a href="{% url 'products' %}" class="macart-font shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
-                </h4>
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock %}

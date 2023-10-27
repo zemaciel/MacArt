@@ -407,9 +407,6 @@ input[name='q']::placeholder {
 }
 
 
-
-
-
 /* FAQ */
 .faq_list {
     justify-content: center;
@@ -433,10 +430,6 @@ input[name='q']::placeholder {
     text-decoration: none;
     font-weight: 600;
 }
-}
-
-
-
 
 
 /* ________ MEDIA QUERIES ________ */
@@ -466,7 +459,7 @@ input[name='q']::placeholder {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 90px;
     }
 
     body {
@@ -494,10 +487,6 @@ input[name='q']::placeholder {
         font-size: 0.9rem;
     }
 
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: 0.375rem 0.375rem;
@@ -514,7 +503,16 @@ input[name='q']::placeholder {
         padding: 0.25rem 0.5rem !important;
     }
 
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        background-image: url('/media/CBV20170612-down-town-sao-paulo-brazil.jpg');
+    }
 }
+
+
 
 /* GoogleMaps iframe  */
 @media (max-width: 991px) {
