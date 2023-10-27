@@ -47,6 +47,10 @@ main {
     align-self: center;
 }
 
+.association-logos-longer {
+    width: 165px;
+}
+
 
 /* ________ FOOTER________ */
 .footer {
@@ -509,6 +513,10 @@ input[name='q']::placeholder {
 
     .hero-section {
         background-image: url('/media/CBV20170612-down-town-sao-paulo-brazil.jpg');
+    }
+
+    .association-logos-longer {
+        width: 125px;
     }
 }
 
