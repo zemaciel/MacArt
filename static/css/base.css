@@ -111,10 +111,8 @@ main {
     width: fit-content;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+.macart-subscribe-button {
+    max-width: 250px;
 }
 
 .macart-button {
@@ -125,9 +123,6 @@ main {
     border-radius: 0;
 }
 
-.macart-subscribe-button {
-    max-width: 250px;
-}
 
 .macart-button:hover,
 .macart-button:active,
@@ -135,12 +130,6 @@ main {
     background: #3b3b3b;
     color: white;
     border-radius: 0%;
-}
-
-
-.btn-black {
-    background: black;
-    color: white;
 }
 
 .btn-outline-black {
@@ -155,6 +144,17 @@ main {
 .btn-outline-black:focus {
     background: black;
     color: white !important;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
 }
 
 .shop-now-button:hover,
@@ -418,7 +418,9 @@ input[name='q']::placeholder {
 
 .faq-footer {
     border-bottom: #E94E1B 3px solid;
-    margin-bottom: 2rem;
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
 }
 
 .faq-question {
@@ -426,6 +428,31 @@ input[name='q']::placeholder {
     font-family: 'Barlow';
     font-weight: 400;
 }
+
+.faq-admin-div {
+    background: #f8cfc1;
+    margin: 2rem 0 2rem;
+}
+
+
+.admin-button {
+    background: #E94E1B;
+    font-family: Barlow, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    border-radius: 0;
+}
+
+
+.admin-button:hover,
+.admin-buttonn:active,
+.admin-button:focus {
+    background: #ab350d;
+    color: white;
+    border-radius: 0%;
+}
+
 
 
 /* ________ MEDIA QUERIES ________ */

@@ -3,47 +3,77 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="macart-font">Questions And Answers</h2>
-            <hr class="w-50 mb-1" />
+  <div class="row">
+    <div class="col text-center mt-3">
+      <h2 class="macart-font">Questions And Answers</h2>
+      <hr class="w-50 mb-1" />
+      <!-- FAQ Management - Add an Entry -->
+      {% if request.user.is_superuser %}
+      <div class="row">
+        
+        <div class="col-12 col-md-6 mx-auto text-center faq-admin-div py-3">
+          <p>
+            <a href="{% url 'add_faq' %}" class="admin-button btn btn-lg">Add a
+              new entry</a>
+            </p>
         </div>
-    </div>
+      </div>
 
-    {% for faq in faqs %}
-    <div class="row">
-        <div class="col-12 col-md-6 mx-auto text-center">
-            <!-- FAQ card -->
-            <div class="faq_list">
-                <h3 class="faq-question">{{ faq.question }}</h3>
-                <p>{{ faq.answer }}</p>
-            </div>
 
-            <!-- FQA card Footer -->
-            <div class="faq-footer bg-light">
-              <p class="text-muted text-right"> Updated on {{ faq.updated_on|date:"F j, Y" }}</p>
-              <!-- FAQ Management -->
-              {% if request.user.is_superuser %}
-              <small class="ml-3">
-                  <a href="{% url 'edit_faq' faq.id %}">Edit</a> |
-                  <a class="text-danger" href="{% url 'delete_faq' faq.id %}">Delete</a>
-              </small>
-              {% endif %}
-            </div>
-        </div>
+
+      {% endif %}
     </div>
-    {% endfor %}
+  </div>
+
+
+
+
+  {% for faq in faqs %}
+  <div class="row">
     <div class="col-12 col-md-6 mx-auto text-center">
-    <h4 class="">Still need help? <a href="{% url 'contact' %}">Contact us</a></h4>
+      <!-- FAQ CARD -->
+      <div class="faq_list">
+        <h3 class="faq-question">{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+      </div>
+
+      <!-- FAQ card Footer -->
+      <div class="bg-light mb-3">
+        <div class="row">
+          <div class="col-6 faq-footer">
+            <!-- FAQ Management -->
+            {% if request.user.is_superuser %}
+            <small class="ml-3">
+              <a href="{% url 'edit_faq' faq.id %}">Edit</a> |
+              <a class="text-danger" href="{% url 'delete_faq' faq.id %}">Delete</a>
+            </small>
+            {% endif %}
+          </div>
+          <div class="col-6 faq-footer">
+            <p class="text-muted text-right"> Updated on {{ faq.updated_on|date:"F j, Y" }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- End of FAQ card Footer -->
+    </div>
+  </div>
+  <!-- End of FAQ CARD -->
+  {% endfor %}
+  <div class="col text-center mt-3 py-2">
+    <h4 class="">Still need help?</h4>
+    <h4>
+      <a href="{% url 'contact' %}" class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Contact
+        us</a>
+    </h4>
   </div>
 </div>
 {% endblock %}
