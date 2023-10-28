@@ -25,13 +25,22 @@
                 <form method="POST" action="{% url 'add_faq' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
+                        <div class="form-group">
+                            <label class="macart-font" for="{{ field.auto_id }}">{{ field.label }}</label>
                             {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'FAQList' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Add FAQ Entry</button>
                     </div>
                 </form>
+                
             </div>            
         </div>
     </div>

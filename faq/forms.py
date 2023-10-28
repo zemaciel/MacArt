@@ -1,7 +1,6 @@
 from django import forms
 from .models import FAQEntry
 
-
 class FAQForm(forms.ModelForm):
 
     class Meta:

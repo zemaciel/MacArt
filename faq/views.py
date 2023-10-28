@@ -28,7 +28,7 @@ def add_faq(request):
         if form.is_valid():
             faq = form.save()
             messages.success(request, 'Successfully added entry!')
-            return redirect(reverse('FAQList', args=[FAQEntry.id]))
+            return redirect(reverse('FAQList'))
         else:
             messages.error(request, 'Error, check if the form is valid.')
     else:
