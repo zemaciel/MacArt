@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Format
 from .forms import ProductForm
 
 
@@ -36,6 +36,11 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        if 'format' in request.GET:
+            formats = request.GET['format'].split(',')
+            products = products.filter(format__name__in=formats)
+            formats = Format.objects.filter(name__in=formats)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -52,6 +57,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_formats': formats,
     }
 
     return render(request, 'products/products.html', context)

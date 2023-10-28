@@ -29,7 +29,7 @@ def add_to_bag(request, item_id):
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
                 msg = (
-                    f'Updated size AGORA VAI {size.upper()} {product.name} '
+                    f'Updated size {size.upper()} {product.name} '
                     f'quantity to {bag[item_id]["items_by_size"][size]}')
                 messages.success(request, msg)
 
@@ -73,7 +73,7 @@ def adjust_bag(request, item_id):
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
             msg = (
-                    f'Updated size MARIA {size.upper()} {product.name} '
+                    f'Updated size {size.upper()} {product.name} '
                     f'quantity to {bag[item_id]["items_by_size"][size]}')
             messages.success(request, msg)
         else:
