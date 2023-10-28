@@ -12,7 +12,7 @@ class ArtistAdmin(admin.ModelAdmin):
 class SocialMediaAdmin(admin.ModelAdmin):
     list_display = (
         'artist',
-        'facebook', 
+        'facebook',
         'instagram',
         'x',
         'site',)

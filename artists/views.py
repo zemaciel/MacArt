@@ -40,7 +40,7 @@ def add_artist(request):
     if request.method == 'POST':
         artist_form = ArtistForm(request.POST, request.FILES)
         social_media_form = SocialMediaForm(request.POST)
-        
+
         if artist_form.is_valid() and social_media_form.is_valid():
             artist = artist_form.save()
 
@@ -75,13 +75,15 @@ def edit_artist(request, artist_id):
     if request.method == 'POST':
         artist_form = ArtistForm(request.POST, request.FILES, instance=artist)
         social_media = SocialMedia.objects.filter(artist=artist).first()
-        social_media_form = SocialMediaForm(request.POST, instance=social_media)
+        social_media_form = SocialMediaForm(
+            request.POST, instance=social_media
+            )
 
         if artist_form.is_valid() and social_media_form.is_valid():
             artist = artist_form.save()
             social_media = social_media_form.save()
 
-            messages.success(request, 'Successfully updated the artist profile')
+            messages.success(request, 'Artist successfully updated')
             return redirect(reverse('artist_detail', args=[artist.id]))
         else:
             messages.error(request, 'Failed to updated artist profile.')

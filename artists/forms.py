@@ -1,6 +1,7 @@
 from django import forms
 from .models import Artist, SocialMedia
 
+
 class ArtistForm(forms.ModelForm):
 
     class Meta:
