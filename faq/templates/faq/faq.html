@@ -31,6 +31,13 @@
             <!-- FQA card Footer -->
             <div class="faq-footer bg-light">
               <p class="text-muted text-right"> Updated on {{ faq.updated_on|date:"F j, Y" }}</p>
+              <!-- FAQ Management -->
+              {% if request.user.is_superuser %}
+              <small class="ml-3">
+                  <a href="{% url 'edit_faq' faq.id %}">Edit</a> |
+                  <a class="text-danger" href="{% url 'delete_faq' faq.id %}">Delete</a>
+              </small>
+              {% endif %}
             </div>
         </div>
     </div>

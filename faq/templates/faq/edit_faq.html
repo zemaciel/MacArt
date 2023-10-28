@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="macart-font mb-4">FAQ <span class="text-orange">Management</span></h2>
+                <h5 class="text-muted">Edit an Entry</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'edit_faq' faq.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label class="macart-font" for="{{ field.auto_id }}">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'FAQList' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Add FAQ Entry</button>
+                    </div>
+                </form>
+                
+            </div>            
+        </div>
+    </div>
+{% endblock %}
