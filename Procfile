@@ -1,1 +1,1 @@
-web: gunicorn macart.wsgi:application
+web: gunicorn mac_art.wsgi:application
