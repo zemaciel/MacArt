@@ -530,10 +530,6 @@ input[name='q']::placeholder {
         font-size: 2rem;
     }
 
-    .hero-section {
-        background-image: url('/media/CBV20170612-down-town-sao-paulo-brazil.jpg');
-    }
-
     .association-logos-longer {
         width: 125px;
     }
