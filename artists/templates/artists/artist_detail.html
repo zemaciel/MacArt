@@ -134,10 +134,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end product footer -->
+                    <!-- End of Product Footer -->
                 </div>
             </div>
-            <!-- end PRODUCT CARD -->
+            <!-- End of Product Card -->
             {% if forloop.counter|divisibleby:1 %}
             <div class="col-12 d-sm-none mb-5">
                 <hr>
@@ -165,44 +165,23 @@
 </div>
 
 <!-- NAVIGATION BUTTONS -->
-<!-- <div class="row justify-content-center py-3">
-    <div class="col-md-2 text-center mt-3 bg-yellow">
-        <h5>
-            <a href="{% url 'artists' %}"
-                class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
-        </h5>
-
-
-    </div>
-    <div class="col-md-2 text-center mt-3 bg-red">
-        <h5>
-            <a href="{% url 'products' %}"
-                class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
-        </h5>
-    </div>
-</div> -->
-
-<!-- NEW NAVIGATION BUTTONS -->
-<div class="col-12 col-md-6 mx-auto text-center">
-
-      <!-- FAQ card Footer -->
-      <div class="bg-light mb-3">
-        <div class="row">
-          <div class="col-6 faq-footer">
-            <h5>
-                <a href="{% url 'artists' %}"
-                    class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
-            </h5>
-            
-          </div>
-          <div class="col-6 faq-footer">
-            <h5>
-                <a href="{% url 'products' %}"
-                    class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
-            </h5>
-          </div>
+<div class="col-12 col-md-6 mx-auto text-center mt-2">
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-12 col-md-6 artist-nav">
+          <h5>
+              <a href="{% url 'artists' %}"
+                  class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Know our Artists</a>
+          </h5>
+        </div>
+        <div class="col-12 col-md-6 artist-nav">
+          <h5>
+              <a href="{% url 'products' %}"
+                  class="macart-font macart-button btn btn-lg rounded-0 text-uppercase py-3">Browse our gallery</a>
+          </h5>
         </div>
       </div>
     </div>
+</div>
 
 {% endblock %}

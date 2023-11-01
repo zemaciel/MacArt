@@ -319,6 +319,13 @@ input[name='q']::placeholder {
     font-size: 1.2rem;
 }
 
+.artist-nav {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+
 
 /* Allauth form formatting */
 
