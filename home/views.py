@@ -4,12 +4,15 @@ from django.template.loader import render_to_string
 
 from .forms import ContactForm
 
+
 def index(request):
     return render(request, 'home/index.html')
+
 
 def emailsent(request):
     """ A view to display the 'email sent' confirmation page """
     return render(request, 'home/emailsent.html')
+
 
 def contact(request):
     """ View to the contact page (from: youtu.be/dnhEnF7_RyM) """
@@ -30,8 +33,10 @@ def contact(request):
                 'content': content,
             })
 
-            send_mail('The contact Form subject', 'This is the message',
-                      'noreply@macart.com', ['joemacdesign@gmail.com'], html_message=html)
+            send_mail(
+                'The contact Form subject', 'This is the message',
+                'noreply@macart.com', ['joemacdesign@gmail.com'],
+                html_message=html)
 
             return redirect('emailsent')
     else:
