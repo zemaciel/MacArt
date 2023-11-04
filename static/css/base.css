@@ -21,6 +21,10 @@ main {
     flex-grow: 1;
 }
 
+.main-home {
+    flex-grow: 1;
+}
+
 .hero-section {
     background-image: url('/media/hero_image_bicycles_in_dublin.webp');
     background-size: cover;

@@ -29,7 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-zemaciel-macart-i45nj6ch919.ws-eu105.gitpod.io', 'pp5-macart-6c87c04aa952.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-zemaciel-macart-i45nj6ch919.ws-eu105.gitpod.io',
+    'pp5-macart-6c87c04aa952.herokuapp.com', 'localhost',
+    ]
 
 
 # Application definition
