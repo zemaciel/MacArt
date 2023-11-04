@@ -31,7 +31,7 @@ def contact(request):
             })
 
             send_mail('The contact Form subject', 'This is the message',
-                      'settings.DEFAULT_FROM_EMAIL', ['noreply@macart.com'], html_message=html)
+                      'noreply@macart.com', ['joemacdesign@gmail.com'], html_message=html)
 
             return redirect('emailsent')
     else:
