@@ -25,7 +25,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
@@ -53,9 +53,9 @@ class StripeWH_Handler:
         stripe_charge = stripe.Charge.retrieve(
                 intent.latest_charge
                 )
-        billing_details = intent.charges.data[0].billing_details
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
+        grand_total = grand_total = round(stripe_charge.amount / 100, 2)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():

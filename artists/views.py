@@ -75,10 +75,7 @@ def edit_artist(request, artist_id):
     if request.method == 'POST':
         artist_form = ArtistForm(request.POST, request.FILES, instance=artist)
         social_media = SocialMedia.objects.filter(artist=artist).first()
-        social_media_form = SocialMediaForm(
-            request.POST,
-            instance=social_media
-            )
+        social_media_form = SocialMediaForm(request.POST, instance=social_media)
 
         if artist_form.is_valid() and social_media_form.is_valid():
             artist = artist_form.save()
