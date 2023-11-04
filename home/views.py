@@ -24,9 +24,6 @@ def contact(request):
             email = form.cleaned_data['email']
             content = form.cleaned_data['content']
 
-            # print(form.cleaned_data['email'])
-            # print('the form was valid')
-
             html = render_to_string('home/emails/contactform.html', {
                 'name': name,
                 'email': email,
@@ -34,9 +31,11 @@ def contact(request):
             })
 
             send_mail(
-                'The contact Form subject', 'This is the message',
-                'noreply@macart.com', ['joemacdesign@gmail.com'],
-                html_message=html)
+                'The contact Form subject',
+                'This is the message',
+                settings.DEFAULT_FROM_EMAIL,
+                ['example@mail.com'], html_message=html
+                )
 
             return redirect('emailsent')
     else:
