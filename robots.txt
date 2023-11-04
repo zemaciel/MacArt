@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /checkout/
+Sitemap: https://pp5-macart-6c87c04aa952.herokuapp.com/sitemap.xml
