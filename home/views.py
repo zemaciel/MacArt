@@ -1,6 +1,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
+
 from .forms import ContactForm
 
 
@@ -30,7 +31,7 @@ def contact(request):
             })
 
             send_mail('The contact Form subject', 'This is the message',
-                      settings.DEFAULT_FROM_EMAIL, ['example@mail.com'], html_message=html)
+                      'noreply@macart.com', ['settings.DEFAULT_FROM_EMAIL'], html_message=html)
 
             return redirect('emailsent')
     else:

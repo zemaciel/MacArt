@@ -39,16 +39,13 @@
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'artists' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Updated Artist</button>
+                        <button class="btn btn-black rounded-0" type="submit">Update Artist</button>
                     </div>
                 </form>
             </div>            
         </div>
 
 {% endblock %}
-
-'artist_form': artist_form,
-        'social_media_form': social_media_form,
 
 {% block postloadjs %}
     {{ block.super }}

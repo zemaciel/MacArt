@@ -1,5 +1,5 @@
 <nav>
-    <div class="collapse navbar-collapse" id="main-nav">
+    <div class="collapse navbar-collapse d-flex" id="main-nav">
         <ul class="navbar-nav w-auto mx-auto">
             <li class="nav-item d-block d-md-none">
                 <a class="font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
@@ -29,24 +29,28 @@
                     Photo Prints
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="theme-link" role="menu">
-                    <a href="#" class="dropdown-item nav-link-subtitle" role="menuitem">Categories</a>
                     <a href="{% url 'products' %}?category=architectural" class="dropdown-item">Architectural</a>
                     <a href="{% url 'products' %}?category=cities" class="dropdown-item">City</a>
                     <a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a>
                     <a href="{% url 'products' %}?category=street" class="dropdown-item">Street Photo</a>
-                    <hr>
-                    <a href="#" class="dropdown-item nav-link-subtitle" aria-labelledby="format-link">Formats</a>
-                    <a href="{% url 'products' %}?format=horizontal" class="dropdown-item">Horizontal</a>
-                    <a href="{% url 'products' %}?format=square" class="dropdown-item">Square</a>
-                    <a href="{% url 'products' %}?format=vertical" class="dropdown-item">Vertical</a>
-                    <a href="{% url 'products' %}?format=horizontal,square,vertical" class="dropdown-item">All
-                        formats</a>
-                    <hr>
                     <a href="{% url 'products' %}?category=architectural,cities,landscape,street"
                         class="dropdown-item">All Photos</a>
                 </div>
             </li>
-
+            <li class="nav-item dropdown">
+                <a class="font-weight-bold nav-link text-black mr-5" href="#" id="theme-link" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Formats
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="theme-link" role="menu">
+                    <a href="#" class="dropdown-item nav-link-subtitle" aria-labelledby="format-link">Formats</a>
+                    <a href="{% url 'products' %}?format=horizontal" class="dropdown-item">Horizontal</a>
+                    <a href="{% url 'products' %}?format=square" class="dropdown-item">Square</a>
+                    <a href="{% url 'products' %}?format=vertical" class="dropdown-item">Vertical</a>
+                    <a href="{% url 'products' %}?format=horizontal,square,vertical"
+                        class="dropdown-item">All Photos</a>
+                </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="font-weight-bold nav-link text-black mr-5" href="#" id="publications-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,9 +66,10 @@
                     aria-haspopup="true" aria-expanded="false">
                     About Us</a>
                 <div class="dropdown-menu border-0" aria-labelledby="about-link" role="menu">
-                    <a href="{% url 'artists' %}" class="dropdown-item" role="menuitem">Artists</a>
-                    <a href="{% url 'FAQList' %}" class="dropdown-item" role="menuitem">FAQ</a>
-                    <a href="{% url 'contact' %}" class="dropdown-item" role="menuitem">Contact Us</a>
+                    <a href="{% url 'home' %}#about" class="dropdown-item">MacArt Fine Art</a>
+                    <a href="{% url 'artists' %}" class="dropdown-item">Artists</a>
+                    <a href="{% url 'FAQList' %}" class="dropdown-item">FAQ</a>
+                    <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
                 </div>
             </li>
         </ul>
