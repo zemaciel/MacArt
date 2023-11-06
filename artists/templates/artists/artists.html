@@ -25,7 +25,8 @@
             <div class="card h-100 border-0">
                 {% if artist.artist_image %}
                 <a href="{% url 'artist_detail' artist.id %}">
-                    <img class="card-img-top img-fluid artist-photo" src="{{ artist.artist_image.url }}" alt="{{ artist.name }}">
+                    <img class="card-img-top img-fluid artist-photo" src="{{ artist.artist_image.url }}"
+                        alt="{{ artist.name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'artist_detail' artist.id %}">
@@ -78,7 +79,5 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
-</div>
 </div>
 {% endblock %}
