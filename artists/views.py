@@ -82,7 +82,7 @@ def edit_artist(request, artist_id):
 
         if artist_form.is_valid() and social_media_form.is_valid():
             artist = artist_form.save()
-            social_media = social_media_form.save()
+            social_media_form.save()
 
             messages.success(request, 'Artist successfully updated')
             return redirect(reverse('artist_detail', args=[artist.id]))
