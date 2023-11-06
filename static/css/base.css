@@ -7,6 +7,23 @@ body {
     font-family: 'Barlow';
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Lato';
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+}
+
 .flex-wrapper {
     display: flex;
     flex-direction: column;
