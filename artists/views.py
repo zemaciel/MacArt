@@ -68,30 +68,28 @@ def add_artist(request):
 @login_required
 def edit_artist(request, artist_id):
     """ Edit an artist profile """
-
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only staff can do that.')
         return redirect(reverse('home'))
-
     artist = get_object_or_404(Artist, pk=artist_id)
-    social_media = SocialMedia.objects.filter(artist=artist).first()
-
     if request.method == 'POST':
         artist_form = ArtistForm(request.POST, request.FILES, instance=artist)
-        social_media_form = SocialMediaForm(request.POST, instance=social_media)
+        social_media = SocialMedia.objects.filter(artist=artist).first()
+        social_media_form = SocialMediaForm(
+            request.POST, instance=social_media
+            )
 
         if artist_form.is_valid() and social_media_form.is_valid():
             artist = artist_form.save()
-            social_media_form.save()
+            social_media = social_media_form.save()
 
             messages.success(request, 'Artist successfully updated')
             return redirect(reverse('artist_detail', args=[artist.id]))
         else:
-            messages.error(request, 'Failed to update artist profile.')
-
+            messages.error(request, 'Failed to updated artist profile.')
     else:
         artist_form = ArtistForm(instance=artist)
-        social_media_form = SocialMediaForm(instance=social_media)
+        social_media_form = SocialMediaForm()
         messages.info(request, f'You are editing {artist.name}')
 
     template = 'artists/edit_artist.html'
