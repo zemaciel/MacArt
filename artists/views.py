@@ -111,4 +111,4 @@ def delete_artist(request, artist_id):
     artist = get_object_or_404(Artist, pk=artist_id)
     artist.delete()
     messages.success(request, 'Artist profile deleted!')
-    return redirect(reverse('products'))
+    return redirect(reverse('all_artists'))
