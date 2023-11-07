@@ -1,7 +1,6 @@
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [Deployment](#deployment)
-- [Deployment](#deployment-1)
    * [Deploying the site](#deploying-the-site)
       + [Heroku app setup](#heroku-app-setup)
       + [Preparation for deployment](#preparation-for-deployment)

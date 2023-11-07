@@ -1,7 +1,7 @@
 # README
 ![responsive.png](readme/img/responsive.png)
 
-[**Live website](https://pp5-macart-6c87c04aa952.herokuapp.com/) | [GitHub Repository](https://github.com/zemaciel/MacArt)**
+[**Live website**](https://pp5-macart-6c87c04aa952.herokuapp.com/)  |  [**GitHub Repository**](https://github.com/zemaciel/MacArt)
 
 ### Table of contents
 
@@ -578,6 +578,7 @@ However, issues arise when utilizing the "Artist Management" user interface. Whi
 - **Newsletter Subscription Redirect**: Post-subscription to the newsletter via the MailChimp form, users are navigated to a "Subscription Confirmed" page with two buttons: "Continue to our website" and "Manage your preferences". Clicking on "Continue to our website" should ideally redirect users back to the MacArt page. Instead, they encounter an empty MailChimp form soliciting further details (email, name, and date of birth), accompanied by a notification of underlying errors.
 - **PEP 8 Linter:**  Some Python files “contained line too long” errors that I chose not to rectify presently, especially considering their critical nature and the fact that these errors don't compromise the site's performance.
     - **mac_art (project)**: settings
+    - **Artis app**: views
     - **Checkout App**: views, webhooks
     - **Products App**: widgets
     - **Profile**: forms
